@@ -3,30 +3,24 @@
 [![Build Status](https://travis-ci.com/garywenneker/react-hookz.svg?branch=master)](https://travis-ci.com/garywenneker/react-hookz)
 [![npm version](https://badge.fury.io/js/react-hookz.svg)](https://badge.fury.io/js/react-hookz)
 [![bundle size](https://badgen.net/bundlephobia/minzip/react-hookz)](https://bundlephobia.com/result?p=react-hookz)
+[![downloads](https://img.shields.io/npm/dt/react-hookz.svg)](https://img.shields.io/npm/dt/react-hookz.svg)
 
-React Global Hookz, a simple global state for React with the Hooks API in less than 1kb.
+![react-hookz](https://user-images.githubusercontent.com/6793205/71441931-ee9eef80-2703-11ea-8737-d73146179627.png)
+
+React Global Hookz, a simple global state for React with the Hooks API in less than 1kb written in TypeScript
 
 ---
 
 Table of Contents
 
-- [Install](#installation)
-- [Using TypeScript](#using-typescript)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Bug fixes](#bug-fixes)
+- [Examples](#examples)
 
 ### Installation
 
 ```
-npm install --save react-hookz
-```
-
-### Using TypeScript
-
-Install the TypeScript definitions from DefinitelyTyped
-
-```
-npm install @types/react-hookz
+npm install react-hookz
 ```
 
 ## Usage
@@ -100,6 +94,6 @@ export default connect(Counter);
 
 ## Examples
 
-- [TypeScript-aware React hooks for global state using a HOC](https://codesandbox.io/s/react-hookz-hoc-112fy)
-
-## Bug Fixes 🐛
+- [React Hookz minimal example (like usage above)](https://codesandbox.io/s/react-hookz-global-state-vl5x7)
+- [React Hookz HOC](https://codesandbox.io/s/react-hookz-hoc-112fy)
+- [React Hookz Fetch Action](https://codesandbox.io/s/react-hookz-fetch-action-demo-ellw3)
