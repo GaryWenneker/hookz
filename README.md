@@ -1,9 +1,12 @@
 # React-Hookz
 
 [![Build Status](https://travis-ci.com/garywenneker/react-hookz.svg?branch=master)](https://travis-ci.com/garywenneker/react-hookz)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/GaryWenneker/react-hookz.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/GaryWenneker/react-hookz/context:javascript)
 [![npm version](https://badge.fury.io/js/react-hookz.svg)](https://badge.fury.io/js/react-hookz)
+[![install size](https://packagephobia.now.sh/badge?p=react-hookz)](https://packagephobia.now.sh/result?p=react-hookz)
 [![bundle size](https://badgen.net/bundlephobia/minzip/react-hookz)](https://bundlephobia.com/result?p=react-hookz)
 [![downloads](https://img.shields.io/npm/dt/react-hookz.svg)](https://img.shields.io/npm/dt/react-hookz.svg)
+[![](https://david-dm.org/GaryWenneker/react-hookz.svg)](https://david-dm.org/GaryWenneker/react-hookz.svg)
 
 ![react-hookz](https://user-images.githubusercontent.com/6793205/71441931-ee9eef80-2703-11ea-8737-d73146179627.png)
 
@@ -97,3 +100,4 @@ export default connect(Counter);
 - [React Hookz minimal example (like usage above)](https://codesandbox.io/s/react-hookz-global-state-vl5x7)
 - [React Hookz HOC](https://codesandbox.io/s/react-hookz-hoc-112fy)
 - [React Hookz Fetch Action](https://codesandbox.io/s/react-hookz-fetch-action-demo-ellw3)
+- [Using React Hookz in a class component](https://codesandbox.io/s/react-hookz-class-component-hfimj)
