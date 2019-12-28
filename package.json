@@ -1,5 +1,5 @@
 {
-    "version": "1.0.10",
+    "version": "1.0.11",
     "name": "react-hookz",
     "license": "MIT",
     "main": "index.ts",
@@ -7,7 +7,8 @@
     "repository": "github:garywenneker/react-hookz",
     "scripts": {
         "test": "npm run lint",
-        "lint": "tslint index.ts"
+        "lint": "tslint index.ts",
+        "build:types": "tsc -d --declarationMap --emitDeclarationOnly"
     },
     "author": "garywenneker",
     "keywords": [
