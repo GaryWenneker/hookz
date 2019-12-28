@@ -76,6 +76,14 @@ function associateActions({ store, actions }: { store: any; actions: any }) {
     return associatedActions;
 }
 
+/**
+ * React Global Hookz, a simple global state for React with the Hooks API in less than 1kb written in TypeScript
+ * @param React The imported namespace of your installed React version
+ * @param initialState Any state object you'd like to use
+ * @param actions An object of functions setting the state
+ * @param initializer Optional initialization function
+ * @see https://github.com/GaryWenneker/react-hookz
+ */
 const useHookz = (
     React: any,
     initialState: any,
