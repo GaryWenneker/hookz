@@ -1,9 +1,9 @@
-interface IHookzListener {
+export interface IHookzListener {
     oldState: any;
     run?: (state: any) => void;
 }
 
-interface IHookzStore {
+export interface IHookzStore {
     state: any;
     actions?: any;
     listeners: IHookzListener[];
