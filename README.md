@@ -33,10 +33,25 @@ npm install react-hookz
 #### Actions
 
 ```javascript
-export const addToCounter = (store: any, amount: number) => {
+export interface IActions {
+  addToCounter: (amount: number) => void;
+}
+
+export interface IState {
+  counter: number;
+}
+
+export interface IStore {
+  state: IState;
+  setState: (state: any) => void;
+}
+
+export const addToCounter = (store: IStore, amount: number) => {
   const counter = store.state.counter + amount;
   store.setState({ counter });
 };
+
+export default { addToCounter };
 ```
 
 #### HOC
@@ -44,29 +59,46 @@ export const addToCounter = (store: any, amount: number) => {
 ```javascript
 import React from "react";
 import ReactHookz from "react-hookz";
+import actions from "../actions";
 
-import * as actions from "../actions/index";
-
-export interface GlobalState {
-  counter: number;
+export interface IState {
+  counterA: number;
+  counterB: number;
+  postcode?: string;
 }
-const initialState: GlobalState = {
-  counter: 1
+
+const initialState: IState = {
+  counterA: 1,
+  counterB: 1,
+  postcode: "3991"
 };
 
 const useReactHookz = ReactHookz(React, initialState, actions);
-export const connect = Component => {
+
+/**
+ * Connect allows you to use the React Hookz functionality from a higher ordered component.
+ * All properties and state will be avalibale.
+ * @param Component Your component
+ * @example connect(MyComponent);
+ * @see https://github.com/GaryWenneker/react-hookz
+ */
+export const connect = <P extends object>(
+  Component: React.ComponentType<P>
+) => {
   return props => {
     let [state, actions] = useReactHookz();
     let _props = { ...props, state, actions };
-    return <Component {..._props} />;
+    return <Component {..._props as P} />;
   };
 };
 
 export default useReactHookz;
+
 ```
 
 #### Component
+
+##### Using a HOC
 
 ```javascript
 import React from "react";
@@ -93,6 +125,40 @@ const Counter: React.FC<Props> = props => {
 };
 
 export default connect(Counter);
+```
+
+##### Using in a Function Component
+
+```javascript
+import React from "react";
+import ReactHookz from "react-hookz";
+import { renderTime } from "../utils/index";
+import Actions, { IState, IActions } from "../actions";
+
+const initialState: IState = {
+  counter: 1
+};
+
+const useReactHookz = ReactHookz(React, initialState, Actions);
+
+const Counter: React.FC = () => {
+  // using ReactHookz
+  const [globalState, globalActions]: [IState, IActions] = useReactHookz();
+  return (
+    <div className="Counter">
+      <p>
+        FC Counter:
+        {globalState.counter}
+      </p>
+      <button type="button" onClick={() => globalActions.addToCounter(1)}>
+        +1 to global
+      </button>
+      <p>FC Counter {renderTime()}</p>
+    </div>
+  );
+};
+
+export default Counter;
 ```
 
 ## Examples
